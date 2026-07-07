@@ -1,0 +1,1388 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a2540">
+  <meta name="description" content="Strategic Flow Co. connects qualified investors with private opportunities across AI infrastructure, digital energy and hyperscale computing.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Strategic Flow Co. | AI Infrastructure Opportunity">
+  <meta property="og:description" content="Strategic access to private opportunities across AI infrastructure, digital energy and hyperscale computing.">
+  <meta property="og:image" content="assets/img/ai-infrastructure.png">
+
+  <title>Strategic Flow Co. | AI Infrastructure Opportunity</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    @font-face {
+      font-family: "Gadugi";
+      src: url("assets/fonts/Gadugi.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Gadugi";
+      src: url("assets/fonts/Gadugi-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "URWClassico";
+      src: url("assets/fonts/URWClassico-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "URWClassico";
+      src: url("assets/fonts/URWClassico-Italic.ttf") format("truetype");
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "URWClassico";
+      src: url("assets/fonts/URWClassico-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "URWClassico";
+      src: url("assets/fonts/URWClassico-BoldItalic.ttf") format("truetype");
+      font-weight: 700;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    :root {
+      --ink: #0a2540;
+      --ink-2: #0d2d50;
+      --ink-3: #103460;
+      --surface: #f5f7f8;
+      --white: #fff;
+      --text: #dfe7ed;
+      --muted: #9fb0be;
+      --muted-dark: #5f707e;
+      --teal: #00d39a;
+      --teal-soft: #4de8be;
+      --gold: #cba145;
+      --gold-soft: #cba145;
+      --line: rgba(255,255,255,.13);
+      --line-dark: rgba(10,37,64,.12);
+      --shadow: 0 30px 90px rgba(0,0,0,.24);
+      --radius-lg: 30px;
+      --radius-md: 18px;
+      --container: 1200px;
+      --header-h: 88px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 20px); }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--text);
+      background: var(--ink);
+      font-family: "Gadugi", system-ui, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button { color: inherit; }
+
+    :focus-visible {
+      outline: 3px solid var(--gold-soft);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--gold-soft);
+      font-family: "Gadugi", sans-serif;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 36px;
+      height: 1px;
+      content: "";
+      background: currentColor;
+      opacity: .8;
+    }
+
+    .section-title {
+      max-width: 820px;
+      margin: 18px 0 0;
+      color: var(--white);
+      font-family: "URWClassico", Georgia, serif;
+      font-size: clamp(2.45rem, 5.2vw, 5rem);
+      font-weight: 600;
+      line-height: 1.04;
+      letter-spacing: -.035em;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      border-bottom: 1px solid transparent;
+      background: linear-gradient(to bottom, rgba(10,37,64,.9), rgba(10,37,64,.2));
+      transition: background .25s ease, border-color .25s ease, backdrop-filter .25s ease;
+    }
+
+    .site-header.is-scrolled {
+      border-color: var(--line);
+      background: rgba(10,37,64,.92);
+      backdrop-filter: blur(18px);
+    }
+
+    .header-inner {
+      min-height: var(--header-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      flex: 0 0 auto;
+    }
+
+    .brand img {
+      width: min(290px, 32vw);
+      max-height: 70px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .main-nav a {
+      position: relative;
+      padding: 12px 0;
+      color: #e9f0f4;
+      font-family: "Gadugi", sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .main-nav a::after {
+      position: absolute;
+      right: 0;
+      bottom: 5px;
+      left: 0;
+      height: 1px;
+      content: "";
+      background: var(--gold-soft);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .2s ease;
+    }
+
+    .main-nav a:hover::after,
+    .main-nav a[aria-current="page"]::after { transform: scaleX(1); }
+
+    .header-cta,
+    .button {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 24px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      cursor: pointer;
+      font-family: "Gadugi", sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .button:hover,
+    .header-cta:hover { transform: translateY(-2px); }
+
+    .header-cta,
+    .button-primary {
+      color: #152215;
+      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+      box-shadow: 0 14px 34px rgba(215,173,74,.18);
+    }
+
+    .button-secondary {
+      border-color: rgba(255,255,255,.22);
+      color: var(--white);
+      background: rgba(255,255,255,.045);
+      backdrop-filter: blur(8px);
+    }
+
+    .button-secondary:hover {
+      border-color: rgba(255,255,255,.4);
+      background: rgba(255,255,255,.08);
+    }
+
+    .menu-toggle {
+      width: 48px;
+      height: 48px;
+      display: none;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: rgba(255,255,255,.04);
+      cursor: pointer;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      width: 20px;
+      height: 2px;
+      display: block;
+      content: "";
+      background: var(--white);
+      transition: transform .2s ease, opacity .2s ease;
+    }
+
+    .menu-toggle span { position: relative; }
+    .menu-toggle span::before { position: absolute; top: -6px; }
+    .menu-toggle span::after { position: absolute; top: 6px; }
+    .menu-toggle[aria-expanded="true"] span { background: transparent; }
+    .menu-toggle[aria-expanded="true"] span::before { top: 0; transform: rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span::after { top: 0; transform: rotate(-45deg); }
+
+    .hero {
+      position: relative;
+      min-height: 640px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero-bg,
+    .hero-overlay,
+    .hero-gridlines {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+    }
+
+    .hero-bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(.78) contrast(1.05);
+    }
+
+    .hero-overlay {
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(10,37,64,.98) 0%, rgba(10,37,64,.9) 42%, rgba(10,37,64,.38) 74%, rgba(10,37,64,.68) 100%),
+        linear-gradient(180deg, rgba(10,37,64,.05), rgba(10,37,64,.72) 85%, var(--ink));
+    }
+
+    .hero-gridlines {
+      z-index: -1;
+      opacity: .13;
+      background-image:
+        linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: linear-gradient(to right, black, transparent 78%);
+    }
+
+    .hero-content {
+      max-width: 820px;
+      padding: calc(var(--header-h) + 60px) 0 80px;
+    }
+
+    .hero h1 {
+      margin: 16px 0 0;
+      color: var(--white);
+      font-family: "URWClassico", Georgia, serif;
+      font-size: clamp(2.2rem, 4.6vw, 4.6rem);
+      font-weight: 600;
+      line-height: .98;
+      letter-spacing: -.05em;
+    }
+
+    .hero h1 em {
+      color: var(--gold-soft);
+      font-weight: 600;
+    }
+
+    .hero-lead {
+      max-width: 580px;
+      margin: 18px 0 0;
+      color: #c7d4dd;
+      font-size: clamp(.9rem, 1.2vw, 1rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      max-width: 580px;
+      margin-top: 36px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .metric {
+      min-height: 82px;
+      display: grid;
+      align-content: center;
+      gap: 4px;
+      padding: 14px 18px;
+      background: rgba(10,37,64,.74);
+      backdrop-filter: blur(14px);
+    }
+
+    .metric strong {
+      color: var(--white);
+      font-family: "URWClassico", Georgia, serif;
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: .68rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .sector-strip {
+      position: relative;
+      z-index: 4;
+      margin-top: -42px;
+    }
+
+    .sector-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(13,45,80,.92);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .sector-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 24px 26px;
+      border-right: 1px solid var(--line);
+    }
+
+    .sector-item:last-child { border-right: 0; }
+
+    .sector-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      flex: 0 0 42px;
+      place-items: center;
+      border: 1px solid rgba(77,232,190,.28);
+      border-radius: 50%;
+      color: var(--teal-soft);
+      background: rgba(0,211,154,.08);
+    }
+
+    .sector-item strong { display: block; color: var(--white); font-size: .95rem; }
+    .sector-item span { color: var(--muted); font-size: .82rem; }
+
+    section { padding: 120px 0; }
+
+    .about {
+      position: relative;
+      background: var(--ink);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .88fr) minmax(480px, 1.12fr);
+      align-items: center;
+      gap: 90px;
+    }
+
+    .about-visual {
+      position: relative;
+      min-height: 580px;
+    }
+
+    .about-photo {
+      position: absolute;
+      inset: 0 70px 90px 0;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-chart {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 67%;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(13,45,80,.94);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .about-chart img { width: 100%; }
+
+    .about-copy .section-title { font-size: clamp(2.7rem, 4.5vw, 4.8rem); }
+
+    .about-points {
+      display: grid;
+      gap: 0;
+      margin-top: 38px;
+      border-top: 1px solid var(--line);
+    }
+
+    .about-point {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 18px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .about-point-number {
+      color: var(--gold-soft);
+      font-family: "URWClassico", Georgia, serif;
+      font-size: 1.35rem;
+    }
+
+    .about-point h3 {
+      margin: 0 0 6px;
+      color: var(--white);
+      font-family: "Gadugi", sans-serif;
+      font-size: 1rem;
+    }
+
+    .about-point p { margin: 0; color: var(--muted); font-size: .94rem; }
+
+    .opportunity {
+      position: relative;
+      overflow: hidden;
+      background: var(--surface);
+      color: var(--ink);
+    }
+
+    .opportunity::before {
+      position: absolute;
+      top: -300px;
+      right: -260px;
+      width: 700px;
+      height: 700px;
+      border: 1px solid rgba(0,211,154,.16);
+      border-radius: 50%;
+      content: "";
+      box-shadow: 0 0 0 100px rgba(0,211,154,.025), 0 0 0 210px rgba(0,211,154,.02);
+    }
+
+    .opportunity .eyebrow { color: #cba145; }
+    .opportunity .section-title { color: var(--ink); }
+    .opportunity .section-intro { color: var(--muted-dark); }
+
+    .opportunity-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 54px;
+    }
+
+    .opportunity-head .section-intro { max-width: 420px; margin: 0 0 5px; }
+
+    .opportunity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .opportunity-card {
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      border-radius: 24px;
+      background: var(--ink-2);
+      box-shadow: 0 20px 60px rgba(10,37,64,.16);
+      isolation: isolate;
+    }
+
+    .opportunity-card img {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .opportunity-card::before {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      content: "";
+      background: linear-gradient(180deg, rgba(10,37,64,.04) 20%, rgba(10,37,64,.92) 78%, rgba(10,37,64,.99));
+    }
+
+    .opportunity-card::after {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border: 1px solid transparent;
+      border-radius: inherit;
+      content: "";
+      transition: border-color .2s ease;
+    }
+
+    .opportunity-card:hover img { transform: scale(1.05); }
+    .opportunity-card:hover::after { border-color: rgba(244,217,131,.52); }
+
+    .opportunity-card-content { padding: 32px; }
+    .opportunity-card-index { color: var(--gold-soft); font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .opportunity-card h3 { margin: 14px 0 10px; color: var(--white); font-family: "URWClassico", Georgia, serif; font-size: 2.2rem; line-height: 1.08; }
+    .opportunity-card p { margin: 0; color: #c5d0d8; font-size: .94rem; }
+
+    .disclaimer-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 26px;
+      padding: 18px 20px;
+      border: 1px solid var(--line-dark);
+      border-radius: 14px;
+      color: var(--muted-dark);
+      background: rgba(255,255,255,.56);
+      font-size: .82rem;
+    }
+
+    .disclaimer-note svg { flex: 0 0 auto; margin-top: 2px; }
+
+    .process {
+      background: linear-gradient(180deg, var(--ink), #0a2540);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: minmax(340px, .76fr) minmax(0, 1.24fr);
+      gap: 80px;
+      margin-top: 58px;
+    }
+
+    .process-panel {
+      position: sticky;
+      top: 130px;
+      align-self: start;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(0,211,154,.11), rgba(255,255,255,.025));
+    }
+
+    .process-panel h3 {
+      margin: 0 0 14px;
+      color: var(--white);
+      font-family: "URWClassico", Georgia, serif;
+      font-size: 2rem;
+    }
+
+    .process-panel p { margin: 0; color: var(--muted); }
+
+    .process-list { border-top: 1px solid var(--line); }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: 74px 1fr;
+      gap: 24px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .process-step-number {
+      color: var(--gold-soft);
+      font-family: "URWClassico", Georgia, serif;
+      font-size: 2.1rem;
+      line-height: 1;
+    }
+
+    .process-step h3 { margin: 0 0 8px; color: var(--white); font-size: 1.15rem; }
+    .process-step p { margin: 0; color: var(--muted); }
+
+    .contact {
+      position: relative;
+      overflow: hidden;
+      background: #061c38;
+    }
+
+    .contact::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background:
+        radial-gradient(circle at 78% 18%, rgba(0,211,154,.12), transparent 30%),
+        radial-gradient(circle at 15% 72%, rgba(215,173,74,.08), transparent 26%);
+      pointer-events: none;
+    }
+
+    .contact-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, .84fr) minmax(520px, 1.16fr);
+      align-items: start;
+      gap: 82px;
+    }
+
+    .contact-copy { position: sticky; top: 130px; }
+    .contact-copy .section-title { font-size: clamp(3rem, 5vw, 5.4rem); }
+    .contact-copy .section-title em { color: var(--gold-soft); }
+
+    .contact-highlights {
+      display: grid;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .contact-highlight {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #d9e4ea;
+      font-size: .94rem;
+    }
+
+    .contact-highlight::before {
+      width: 8px;
+      height: 8px;
+      flex: 0 0 8px;
+      border-radius: 50%;
+      content: "";
+      background: var(--teal);
+      box-shadow: 0 0 14px rgba(0,211,154,.65);
+    }
+
+    .contact-form {
+      padding: 38px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: rgba(255,255,255,.035);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .form-heading {
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .form-heading h3 { margin: 0; color: var(--white); font-family: "URWClassico", Georgia, serif; font-size: 2rem; }
+    .form-heading p { margin: 8px 0 0; color: var(--muted); font-size: .9rem; }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .field { display: grid; gap: 8px; }
+    .field-full { grid-column: 1 / -1; }
+
+    label {
+      color: #e3ecf1;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .035em;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 12px;
+      outline: 0;
+      color: var(--white);
+      background: rgba(10,37,64,.78);
+      transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    input, select { min-height: 52px; padding: 0 15px; }
+    textarea { min-height: 118px; resize: vertical; padding: 14px 15px; }
+    input::placeholder, textarea::placeholder { color: #768896; }
+    select option { color: var(--ink); background: var(--white); }
+    input:focus, select:focus, textarea:focus { border-color: var(--teal-soft); box-shadow: 0 0 0 4px rgba(77,232,190,.1); background: rgba(10,37,64,.96); }
+
+    .checkbox-row {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      align-items: start;
+      gap: 12px;
+      padding: 5px 0;
+    }
+
+    .checkbox-row input {
+      width: 18px;
+      min-height: 18px;
+      margin: 3px 0 0;
+      accent-color: var(--teal);
+    }
+
+    .checkbox-row label { color: var(--muted); font-size: .78rem; font-weight: 500; line-height: 1.55; }
+    .form-submit { grid-column: 1 / -1; width: 100%; border: 0; }
+
+    .form-message {
+      display: none;
+      grid-column: 1 / -1;
+      padding: 14px 16px;
+      border-radius: 12px;
+      font-size: .9rem;
+    }
+
+    .form-message.success { display: block; color: #caffee; background: rgba(0,211,154,.14); }
+    .form-message.error { display: block; color: #ffe1e1; background: rgba(205,57,57,.15); }
+
+    .site-footer {
+      padding: 54px 0 28px;
+      border-top: 1px solid var(--line);
+      background: #061527;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: minmax(260px, 1.3fr) repeat(2, minmax(160px, .5fr));
+      gap: 50px;
+      padding-bottom: 40px;
+    }
+
+    .footer-brand img { width: min(330px, 100%); max-height: 82px; object-fit: contain; object-position: left center; }
+    .footer-brand p { max-width: 500px; margin: 20px 0 0; color: var(--muted); font-size: .9rem; }
+    .footer-col h3 { margin: 0 0 18px; color: var(--white); font-size: .78rem; letter-spacing: .13em; text-transform: uppercase; }
+    .footer-col a { display: block; width: fit-content; margin: 10px 0; color: var(--muted); font-size: .9rem; }
+    .footer-col a:hover { color: var(--white); }
+
+    .footer-legal {
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: #778895;
+      font-size: .75rem;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 20px;
+      color: #71818e;
+      font-size: .75rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1040px) {
+      :root { --header-h: 78px; }
+      .menu-toggle { display: grid; }
+      .header-cta { display: none; }
+      .nav-wrap { gap: 14px; }
+      .main-nav {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 20px;
+        left: 20px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(10,37,64,.98);
+        box-shadow: var(--shadow);
+      }
+      .main-nav.is-open { display: flex; }
+      .main-nav a { padding: 14px; }
+      .main-nav a::after { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 60px; }
+      .about-visual { max-width: 780px; width: 100%; margin-inline: auto; }
+      .opportunity-head { display: block; }
+      .opportunity-head .section-intro { max-width: 700px; margin-top: 20px; }
+      .opportunity-grid { grid-template-columns: 1fr; }
+      .opportunity-card { min-height: 470px; }
+      .process-grid { grid-template-columns: 1fr; gap: 42px; }
+      .process-panel { position: static; }
+      .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+      .contact-copy { position: static; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(calc(100% - 28px), var(--container)); }
+      .brand img { width: 215px; }
+      .hero { min-height: 760px; }
+      .hero-content { padding: calc(var(--header-h) + 86px) 0 104px; }
+      .hero h1 { font-size: clamp(3.15rem, 15vw, 5.2rem); }
+      .hero-metrics { grid-template-columns: 1fr; }
+      .metric { min-height: 92px; }
+      .sector-strip { margin-top: -32px; }
+      .sector-strip-inner { grid-template-columns: 1fr; }
+      .sector-item { border-right: 0; border-bottom: 1px solid var(--line); }
+      .sector-item:last-child { border-bottom: 0; }
+      section { padding: 88px 0; }
+      .about-visual { min-height: 480px; }
+      .about-photo { inset: 0 28px 70px 0; }
+      .about-chart { width: 76%; padding: 14px; }
+      .opportunity-card { min-height: 420px; }
+      .opportunity-card-content { padding: 26px; }
+      .process-step { grid-template-columns: 50px 1fr; gap: 15px; }
+      .contact-form { padding: 24px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field, .field-full, .checkbox-row, .form-submit, .form-message { grid-column: auto; }
+      .footer-main { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Strategic Flow Co.",
+    "slogan": "Crescimento que gera resultado",
+    "logo": "assets/img/logo.png",
+    "description": "Strategic opportunity access across AI infrastructure, digital energy and hyperscale computing."
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Strategic Flow Co. home">
+        <img src="assets/img/logo.png" alt="Strategic Flow Co. — Crescimento que gera resultado" width="1000" height="253">
+      </a>
+
+      <div class="nav-wrap">
+        <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#opportunity">Opportunity</a>
+          <a href="#process">Approach</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a class="header-cta" href="#contact">Private enquiry</a>
+
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-bg" src="assets/img/ai-infrastructure.png" alt="Large-scale AI data center infrastructure" fetchpriority="high">
+      <div class="hero-overlay"></div>
+      <div class="hero-gridlines"></div>
+
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">Strategic Flow Co. · Private opportunity access</span>
+          <h1 id="hero-title">Capital. Infrastructure. <em>Momentum.</em></h1>
+          <p class="hero-lead">
+            Strategic access to a private AI infrastructure and energy opportunity in Asia,
+            focused on the systems powering next-generation data centers and hyperscale computing.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">Request information</a>
+            <a class="button button-secondary" href="#opportunity">Explore the opportunity</a>
+          </div>
+
+          <div class="hero-metrics" aria-label="Opportunity highlights">
+            <div class="metric">
+              <strong>Up to 500MW</strong>
+              <span>Potential platform scale</span>
+            </div>
+            <div class="metric">
+              <strong>Asia</strong>
+              <span>Strategic market focus</span>
+            </div>
+            <div class="metric">
+              <strong>AI + Energy</strong>
+              <span>Integrated infrastructure thesis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sector-strip" aria-label="Core sectors">
+      <div class="container sector-strip-inner">
+        <div class="sector-item">
+          <div class="sector-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>
+          </div>
+          <div><strong>AI Infrastructure</strong><span>Compute, data centers and capacity</span></div>
+        </div>
+        <div class="sector-item">
+          <div class="sector-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9Z"/></svg>
+          </div>
+          <div><strong>Digital Energy</strong><span>Power systems supporting demand</span></div>
+        </div>
+        <div class="sector-item">
+          <div class="sector-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V9m6 10V5m6 14v-8m4 8H2"/></svg>
+          </div>
+          <div><strong>Long-Term Growth</strong><span>Exposure to structural technology demand</span></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-visual reveal">
+          <div class="about-photo">
+            <img src="assets/img/investment-opportunity.png" alt="Strategic business partnership" loading="lazy">
+          </div>
+          <div class="about-chart">
+            <img src="assets/img/about-chart.png" alt="Illustration of strategic growth" loading="lazy">
+          </div>
+        </div>
+
+        <div class="about-copy reveal">
+          <span class="eyebrow">Growth that generates results</span>
+          <h2 class="section-title" id="about-title">Where strategy meets the infrastructure of tomorrow.</h2>
+          <p class="section-intro">
+            Strategic Flow Co. presents selected opportunities through a clear, discreet and professional process,
+            helping qualified parties understand the strategic thesis before moving to the next stage.
+          </p>
+
+          <div class="about-points">
+            <article class="about-point">
+              <div class="about-point-number">01</div>
+              <div>
+                <h3>Strategic clarity</h3>
+                <p>Complex infrastructure opportunities translated into a focused and decision-ready narrative.</p>
+              </div>
+            </article>
+            <article class="about-point">
+              <div class="about-point-number">02</div>
+              <div>
+                <h3>Qualified access</h3>
+                <p>Private enquiries are handled with discretion and directed to the appropriate next step.</p>
+              </div>
+            </article>
+            <article class="about-point">
+              <div class="about-point-number">03</div>
+              <div>
+                <h3>Long-term perspective</h3>
+                <p>Focus on the structural connection between computing demand, energy and digital infrastructure.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="opportunity" id="opportunity" aria-labelledby="opportunity-title">
+      <div class="container">
+        <div class="opportunity-head reveal">
+          <div>
+            <span class="eyebrow">Opportunity overview</span>
+            <h2 class="section-title" id="opportunity-title">A focused thesis across three strategic pillars.</h2>
+          </div>
+          <p class="section-intro">
+            The opportunity is centered on infrastructure, private capital access and exposure to a high-growth technology market.
+          </p>
+        </div>
+
+        <div class="opportunity-grid">
+          <article class="opportunity-card reveal">
+            <img src="assets/img/ai-infrastructure.png" alt="AI infrastructure facility" loading="lazy">
+            <div class="opportunity-card-content">
+              <span class="opportunity-card-index">01 · Infrastructure</span>
+              <h3>AI Infrastructure Platform</h3>
+              <p>Potential development of a large-scale platform designed to support advanced computing and data center demand.</p>
+            </div>
+          </article>
+
+          <article class="opportunity-card reveal">
+            <img src="assets/img/investment-opportunity.png" alt="Private investment partnership" loading="lazy">
+            <div class="opportunity-card-content">
+              <span class="opportunity-card-index">02 · Private access</span>
+              <h3>Investment Opportunity</h3>
+              <p>A private placement opportunity intended for qualified parties, subject to eligibility and formal documentation.</p>
+            </div>
+          </article>
+
+          <article class="opportunity-card reveal">
+            <img src="assets/img/high-growth-market.jpg" alt="Technology growth market" loading="lazy">
+            <div class="opportunity-card-content">
+              <span class="opportunity-card-index">03 · Market exposure</span>
+              <h3>Structural Growth Themes</h3>
+              <p>Participation in the convergence of AI infrastructure, digital energy and hyperscale computing.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="disclaimer-note reveal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 10v6m0-9h.01"/></svg>
+          <span>References to scale, location and sector exposure are preliminary and may change. No statement on this page should be interpreted as a guarantee of execution, performance or return.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <span class="eyebrow reveal">A professional enquiry process</span>
+        <h2 class="section-title reveal" id="process-title">Clear steps. Appropriate access. Confidential dialogue.</h2>
+
+        <div class="process-grid">
+          <aside class="process-panel reveal">
+            <h3>Designed for serious enquiries</h3>
+            <p>
+              The website is an initial point of contact. Detailed information should only be shared after suitability,
+              confidentiality and documentation requirements have been addressed.
+            </p>
+          </aside>
+
+          <div class="process-list">
+            <article class="process-step reveal">
+              <div class="process-step-number">01</div>
+              <div>
+                <h3>Initial enquiry</h3>
+                <p>Submit your contact details, location and investor profile through the secure enquiry form.</p>
+              </div>
+            </article>
+            <article class="process-step reveal">
+              <div class="process-step-number">02</div>
+              <div>
+                <h3>Qualification</h3>
+                <p>The enquiry is reviewed to determine relevance, eligibility and the appropriate communication route.</p>
+              </div>
+            </article>
+            <article class="process-step reveal">
+              <div class="process-step-number">03</div>
+              <div>
+                <h3>Confidential discussion</h3>
+                <p>Qualified parties may be invited to a private conversation and, where applicable, a confidentiality process.</p>
+              </div>
+            </article>
+            <article class="process-step reveal">
+              <div class="process-step-number">04</div>
+              <div>
+                <h3>Formal information</h3>
+                <p>Any offer or participation can only occur through authorized documents and applicable legal procedures.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <span class="eyebrow">Private enquiries</span>
+          <h2 class="section-title" id="contact-title">Schedule a Consultation</h2>
+          <p class="section-intro">
+            Request further information about the opportunity. Your submission will be reviewed before any detailed material is shared.
+          </p>
+
+          <div class="contact-highlights">
+            <div class="contact-highlight">For qualified and professional enquiries</div>
+            <div class="contact-highlight">Private and confidential communication</div>
+            <div class="contact-highlight">No obligation created by submitting the form</div>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="form-heading">
+            <h3>Request information</h3>
+            <p>Fields marked with * are required.</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="firstName">First name *</label>
+              <input id="firstName" name="firstName" type="text" autocomplete="given-name" required>
+            </div>
+            <div class="field">
+              <label for="lastName">Last name *</label>
+              <input id="lastName" name="lastName" type="text" autocomplete="family-name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email address *</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="phone">Telephone number *</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+            </div>
+            <div class="field">
+              <label for="country">Country of residence *</label>
+              <input id="country" name="country" type="text" autocomplete="country-name" required>
+            </div>
+            <div class="field">
+              <label for="profile">Enquiry profile *</label>
+              <select id="profile" name="profile" required>
+                <option value="">Select an option</option>
+                <option value="individual">Individual investor</option>
+                <option value="family-office">Family office</option>
+                <option value="institution">Institutional investor</option>
+                <option value="advisor">Advisor or intermediary</option>
+                <option value="corporate">Corporate or strategic partner</option>
+                <option value="other">Other professional enquiry</option>
+              </select>
+            </div>
+            <div class="field field-full">
+              <label for="message">Brief message</label>
+              <textarea id="message" name="message" placeholder="Tell us briefly about your interest or organization."></textarea>
+            </div>
+
+            <div class="checkbox-row">
+              <input id="acknowledgement" name="acknowledgement" type="checkbox" required>
+              <label for="acknowledgement">
+                I understand that this website is for informational purposes only. Submitting this form does not constitute an offer,
+                investment, recommendation, solicitation or commitment by either party. *
+              </label>
+            </div>
+
+            <div class="checkbox-row">
+              <input id="privacy" name="privacy" type="checkbox" required>
+              <label for="privacy">
+                I consent to Strategic Flow Co. using the information submitted to review and respond to this enquiry. *
+              </label>
+            </div>
+
+            <button class="button button-primary form-submit" type="submit">Submit private enquiry</button>
+            <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="assets/img/logo.png" alt="Strategic Flow Co." width="1000" height="253" loading="lazy">
+          <p>Strategic opportunity access across AI infrastructure, digital energy and long-term growth themes.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Navigate</h3>
+          <a href="#about">About</a>
+          <a href="#opportunity">Opportunity</a>
+          <a href="#process">Approach</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-col">
+          <h3>Enquiries</h3>
+          <a href="#contact">Private enquiry form</a>
+          <a href="#contact">Qualified parties</a>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        This website is provided solely for general informational purposes and does not constitute investment advice,
+        a recommendation, an offer to sell, or a solicitation of an offer to buy any security or financial instrument.
+        Any opportunity described is subject to eligibility, due diligence, risk assessment, formal legal documentation
+        and applicable laws. All investments involve risk, including possible loss of capital. Independent legal, tax and
+        financial advice should be obtained before making any decision.
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Strategic Flow Co. All rights reserved.</span>
+        <span>Crescimento que gera resultado.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const header = document.getElementById("siteHeader");
+      const menuToggle = document.getElementById("menuToggle");
+      const mainNav = document.getElementById("mainNav");
+      const navLinks = mainNav.querySelectorAll("a");
+      const form = document.getElementById("contactForm");
+      const formMessage = document.getElementById("formMessage");
+      const year = document.getElementById("year");
+
+      const updateHeader = () => {
+        header.classList.toggle("is-scrolled", window.scrollY > 18);
+      };
+
+      const closeMenu = () => {
+        mainNav.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+      };
+
+      menuToggle.addEventListener("click", () => {
+        const willOpen = !mainNav.classList.contains("is-open");
+        mainNav.classList.toggle("is-open", willOpen);
+        menuToggle.setAttribute("aria-expanded", String(willOpen));
+        menuToggle.setAttribute("aria-label", willOpen ? "Close navigation" : "Open navigation");
+      });
+
+      navLinks.forEach(link => link.addEventListener("click", closeMenu));
+
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape") closeMenu();
+      });
+
+      window.addEventListener("scroll", updateHeader, { passive: true });
+      updateHeader();
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.13 });
+
+        document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
+      } else {
+        document.querySelectorAll(".reveal").forEach(element => element.classList.add("is-visible"));
+      }
+
+      form.addEventListener("submit", async event => {
+        event.preventDefault();
+        formMessage.className = "form-message";
+        formMessage.textContent = "";
+
+        if (!form.checkValidity()) {
+          formMessage.className = "form-message error";
+          formMessage.textContent = "Please complete all required fields and confirm both acknowledgements.";
+          form.reportValidity();
+          return;
+        }
+
+        const submitBtn = form.querySelector(".form-submit");
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending…";
+
+        try {
+          const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(Object.fromEntries(new FormData(form)))
+          });
+
+          let result = {};
+          const contentType = response.headers.get("Content-Type") || "";
+          if (contentType.includes("application/json")) {
+            result = await response.json();
+          }
+
+          if (!response.ok || !result.ok) {
+            throw new Error(result.error || "Something went wrong. Please try again or contact us directly.");
+          }
+
+          formMessage.className = "form-message success";
+          formMessage.textContent = "Thank you. Your enquiry has been received and will be reviewed shortly.";
+          form.reset();
+        } catch (err) {
+          formMessage.className = "form-message error";
+          formMessage.textContent = err.message || "Something went wrong. Please try again or contact us directly.";
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Submit private enquiry";
+        }
+      });
+
+      year.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
