@@ -215,6 +215,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 if not SMTP_SENDER or not SMTP_RECIPIENT:
     print("WARNING: SMTP_SENDER or SMTP_RECIPIENT is not set. Contact form will not send emails.")
 
-with socketserver.TCPServer(("0.0.0.0", 5000), Handler) as httpd:
-    print("Serving on port 5000")
+PORT = int(os.environ.get("PORT", 5000))
+
+with socketserver.TCPServer(("0.0.0.0", PORT), Handler) as httpd:
+    print(f"Serving on port {PORT}")
     httpd.serve_forever()
