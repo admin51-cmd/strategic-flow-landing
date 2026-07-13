@@ -140,6 +140,10 @@ This enquiry was submitted via the Strategic Flow Co. website contact form.
     msg.attach(MIMEText(body_text, "plain"))
     msg.attach(MIMEText(body_html, "html"))
 
+    with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=SMTP_TIMEOUT) as server:
+        server.starttls()
+        server.login(SMTP_SENDER, GMAIL_APP_PASSWORD)
+        server.sendmail(SMTP_SENDER, SMTP_RECIPIENT, msg.as_string())
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
