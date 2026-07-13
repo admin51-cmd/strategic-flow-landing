@@ -186,27 +186,28 @@
     }
 
     .nav-wrap {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
 
     .main-nav {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 20px;
     }
 
-    .main-nav a {
-      position: relative;
-      padding: 12px 0;
-      color: #e9f0f4;
-      font-family: "Gadugi", sans-serif;
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
+    .main-nav a:not(.header-cta) {
+  position: relative;
+  padding: 12px 0;
+  color: #e9f0f4;
+  font-family: "Gadugi", sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
 
     .main-nav a::after {
       position: absolute;
@@ -221,19 +222,25 @@
       transition: transform .2s ease;
     }
 
-    .main-nav a:hover::after,
-    .main-nav a[aria-current="page"]::after { transform: scaleX(1); }
+  .main-nav a:not(.header-cta):hover::after,
+.main-nav a:not(.header-cta)[aria-current="page"]::after {
+    transform: scaleX(1);
+}
+.header-cta::after {
+    display: none;
+    content: none;
+}
 
     .header-cta,
     .button {
-      min-height: 50px;
+      min-height: 42px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      padding: 0 24px;
+      padding: 0 20px;
       border: 1px solid transparent;
-      border-radius: 999px;
+      border-radius: 10px;
       cursor: pointer;
       font-family: "Gadugi", sans-serif;
       font-size: .78rem;
@@ -242,16 +249,75 @@
       text-transform: uppercase;
       transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
     }
+    .header-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
+    height: 40px;
+    min-width: 105px;
+    padding: 0 20px;
+
+    width: auto;
+    flex: 0 0 auto;
+
+    border: none;
+    border-radius: 999px;
+
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    color: #0f2940;
+
+    font-family: "Gadugi", sans-serif;
+    font-size: .70rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    line-height: 1;
+
+    box-shadow: 0 8px 18px rgba(215,173,74,.18);
+
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.header-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(215,173,74,.30);
+}
+.header-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 36px;
+    padding: 0 8px;
+
+    background: transparent;
+    border: none;
+
+    color: #e9f0f4;
+
+    font-family: "Gadugi", sans-serif;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+
+    transition: color .25s ease, transform .25s ease;
+}
+
+.header-button:hover {
+    color: var(--gold-soft);
+    transform: translateY(-1px);
+}
     .button:hover,
     .header-cta:hover { transform: translateY(-2px); }
 
     .header-cta,
-    .button-primary {
-      color: #152215;
-      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
-      box-shadow: 0 14px 34px rgba(215,173,74,.18);
-    }
+.button-primary {
+    color: #13263b; /* azul escuro */
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    box-shadow: 0 14px 34px rgba(215,173,74,.18);
+}
 
     .button-secondary {
       border-color: rgba(255,255,255,.22);
@@ -942,15 +1008,12 @@
         <img src="assets/img/logo.png" alt="Strategic Flow Co. — Crescimento que gera resultado" width="1000" height="253">
       </a>
 
-      <div class="nav-wrap">
-        <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
-          <a href="#about">About</a>
-          <a href="#opportunity">Opportunity</a>
-          <a href="#process">Approach</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <a class="header-cta" href="#contact">Private enquiry</a>
+      <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+    <a class="header-button" href="#about">About</a>
+    <a class="header-button" href="#opportunity">Opportunity</a>
+    <a class="header-button" href="#process">Approach</a>
+    <a class="header-cta" href="#contact">Contact</a>
+</nav>
 
         <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-controls="mainNav" aria-expanded="false">
           <span aria-hidden="true"></span>
