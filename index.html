@@ -1439,7 +1439,10 @@
           if (!response.ok || !result.ok) {
             throw new Error(result.error || "Something went wrong. Please try again or contact us directly.");
           }
-
+// Google Analytics - Lead gerado
+gtag('event', 'generate_lead', {
+    method: 'contact_form'
+});
           formMessage.className = "form-message success";
           formMessage.textContent = "Thank you. Your enquiry has been received and will be reviewed shortly.";
           form.reset();
