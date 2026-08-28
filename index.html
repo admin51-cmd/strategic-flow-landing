@@ -996,271 +996,450 @@
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
       .reveal { opacity: 1; transform: none; }
     }
-    /* ================================
-   INVESTMENT OVERVIEW
-================================ */
+    /* =================================
+   INVESTOR VALUE ILLUSTRATION
+================================= */
 
 .investment-overview {
-  padding: 110px 0 90px;
-  background: #0f2940;
-  color: #e9f0f4;
+  padding: 110px 0;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(36,72,115,.35), transparent 55%),
+    #071b30;
+  color: #fff;
 }
 
-.overview-header {
-  max-width: 900px;
-  margin-bottom: 34px;
+.value-illustration-header {
+  text-align: center;
+  margin-bottom: 36px;
 }
 
-.overview-header .eyebrow,
-.positioning-intro .eyebrow {
-  display: block;
-  margin-bottom: 10px;
-  color: var(--gold-soft);
-  font-family: "Gadugi", sans-serif;
-  font-size: .68rem;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
+.value-illustration-header h2 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1;
 }
 
-.overview-header h2 {
-  margin: 0 0 14px;
-  color: #ffffff;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.05;
-}
-
-.overview-header p {
-  max-width: 900px;
+.value-illustration-header p {
   margin: 0;
-  color: rgba(233,240,244,.78);
-  font-size: .95rem;
-  line-height: 1.7;
+  color: #e8edf2;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.value-illustration-header p span {
+  margin: 0 8px;
+  color: var(--gold-soft);
 }
 
 
-/* Highlights */
+/* TOP CARDS */
 
-.overview-highlights {
+.value-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin-bottom: 0;
-  border: 1px solid rgba(180,205,225,.22);
-  border-radius: 12px 12px 0 0;
+  gap: 12px;
+}
+
+.value-card {
   overflow: hidden;
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  background: #f4f4f1;
+  color: #071b30;
 }
 
-.overview-highlight {
-  min-height: 105px;
-  padding: 22px 18px;
-  border-right: 1px solid rgba(180,205,225,.18);
+.value-card-title {
+  padding: 11px 12px;
+  background: #071b30;
+  color: #fff;
+  border-bottom: 1px solid var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .82rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.value-card-content {
+  min-height: 100px;
+  padding: 10px 12px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.value-card-content strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.55rem, 2.4vw, 2.15rem);
+  white-space: nowrap;
+}
+
+.value-icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  border: 3px solid #e1a928;
+  border-radius: 50%;
+  background: #071b30;
+  color: #e1a928;
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 
-.overview-highlight:last-child {
-  border-right: none;
+.warrant-note {
+  margin: 7px 0 18px;
+  color: #fff;
+  font-size: .68rem;
+  line-height: 1.4;
+  text-align: center;
 }
 
-.overview-highlight strong {
-  color: #ffffff;
-  font-size: 1.55rem;
+
+/* ECONOMIC VALUE */
+
+.economic-value {
+  overflow: hidden;
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+  background:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+    #071b30;
+  background-size: 28px 28px;
+}
+
+.economic-title {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(215,173,74,.4);
+  color: var(--gold-soft);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+
+.value-chart {
+  position: relative;
+  height: 390px;
+}
+
+.value-chart svg {
+  position: absolute;
+  inset: 95px 20px 0;
+  width: calc(100% - 40px);
+  height: 295px;
+  overflow: visible;
+}
+
+.chart-area {
+  fill: url(#valueArea);
+}
+
+.chart-line {
+  fill: none;
+  stroke: #e1a928;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chart-point {
+  fill: #071b30;
+  stroke: #e1a928;
+  stroke-width: 4;
+}
+
+.chart-milestones {
+  position: absolute;
+  top: 15px;
+  left: 3%;
+  right: 3%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4%;
+}
+
+.chart-card {
+  min-height: 125px;
+  padding: 11px 7px;
+  border: 1px solid #d8d8d2;
+  border-radius: 6px;
+  background: #f7f7f3;
+  color: #071b30;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,.18);
+}
+
+.chart-card strong {
+  display: block;
+  font-size: .75rem;
   line-height: 1.1;
 }
 
-.overview-highlight span {
-  margin-top: 8px;
-  color: rgba(233,240,244,.55);
-  font-family: "Gadugi", sans-serif;
-  font-size: .62rem;
+.chart-card span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: .68rem;
+}
+
+.chart-card small {
+  display: block;
+  margin-top: 4px;
+  font-size: .58rem;
   font-weight: 700;
-  letter-spacing: .08em;
+}
+
+.chart-card b {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  margin-bottom: 2px;
 }
 
 
-/* Investment table */
+/* TABLE */
 
 .investment-table-wrap {
   overflow-x: auto;
-  border: 1px solid rgba(180,205,225,.18);
-  border-top: none;
-  border-radius: 0 0 12px 12px;
+  margin-top: 3px;
+  border: 1px solid var(--gold);
+  border-radius: 0 0 8px 8px;
 }
 
 .investment-table {
   width: 100%;
+  min-width: 900px;
   border-collapse: collapse;
-  min-width: 700px;
+  background: #f4f4f1;
+  color: #071b30;
 }
 
 .investment-table th {
-  padding: 15px 18px;
-  color: #8fb9d8;
-  background: rgba(255,255,255,.025);
+  padding: 11px 7px;
+  background: #071b30;
+  color: #fff;
+  border-right: 1px solid rgba(255,255,255,.25);
   font-family: "Gadugi", sans-serif;
-  font-size: .62rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-align: left;
+  font-size: .68rem;
+  line-height: 1.15;
+  text-align: center;
 }
 
 .investment-table td {
-  padding: 20px 18px;
-  border-top: 1px solid rgba(180,205,225,.15);
-  color: #dfe8ee;
+  padding: 11px 7px;
+  border-top: 1px solid #d5d0c3;
+  border-right: 1px solid #d5d0c3;
+  font-size: .75rem;
+  text-align: center;
+}
+
+.investment-table td:first-child {
+  font-weight: 700;
+  text-align: left;
+}
+
+.investment-table .base-row {
+  background: #f0e5c7;
+  font-weight: 700;
+}
+
+
+/* DISCLAIMER */
+
+.illustration-disclaimer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  color: #e9f0f4;
+  font-size: .72rem;
+  line-height: 1.45;
+}
+
+.disclaimer-icon {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--gold);
+  color: var(--gold-soft);
   font-size: .9rem;
 }
 
-.investment-table td:nth-child(2),
-.investment-table td:nth-child(3) {
-  color: #ffffff;
-  font-size: 1.25rem;
-  font-weight: 700;
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+  .value-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chart-milestones {
+    left: 2%;
+    right: 2%;
+    gap: 2%;
+  }
+
+  .chart-card {
+    min-height: 100px;
+  }
+
+  .chart-card strong {
+    font-size: .55rem;
+  }
+
+  .chart-card b {
+    font-size: .72rem;
+  }
+
 }
 
-.investment-table tr:nth-child(even) {
-  background: rgba(255,255,255,.025);
+
+@media (max-width: 600px) {
+
+ .investment-overview {
+  padding: 70px 0;
+}
+
+.value-illustration-header h2 {
+  font-size: 1.8rem;
+  line-height: 1.05;
+}
+
+.value-illustration-header p {
+  font-size: .78rem;
+  line-height: 1.55;
+}
+
+.value-illustration-header p span {
+  display: none;
 }
 
 
-/* Investor positioning */
-
-.investor-positioning {
-  margin-top: 70px;
+/* 4 cards em 2 colunas */
+.value-cards {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 
-.positioning-intro h3 {
-  margin: 0;
-  color: #ffffff;
-  font-size: 1.5rem;
+.value-card-title {
+  padding: 10px 6px;
+  font-size: .72rem;
+  line-height: 1.2;
 }
 
-.positioning-grid {
+.value-card-content {
+  min-height: 90px;
+  justify-content: center;
+  padding: 10px 6px;
+}
+
+.value-card-content strong {
+  font-size: 1.35rem;
+}
+
+.value-card-content span {
+  font-size: .7rem;
+}
+
+
+/* Nota do warrant */
+.warrant-note {
+  margin: 7px 0 16px;
+  font-size: .62rem;
+  line-height: 1.4;
+}
+
+
+/* Gráfico */
+.value-chart {
+  height: 650px;
+  overflow: hidden;
+}
+
+
+/* Cards dos milestones */
+.chart-milestones {
+  position: relative;
+  top: 15px;
+  left: auto;
+  right: auto;
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 32px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+
+  padding: 0 10px;
 }
 
-.positioning-item strong {
-  display: block;
+.chart-card {
+  min-height: 120px;
+  padding: 10px 6px;
+}
+
+.chart-card strong {
+  font-size: .72rem;
+  line-height: 1.2;
+}
+
+.chart-card span {
   margin-bottom: 8px;
-  color: #8fb9d8;
-  font-family: "Gadugi", sans-serif;
-  font-size: .68rem;
-  letter-spacing: .08em;
+  font-size: .65rem;
+  line-height: 1.3;
 }
 
-.positioning-item p {
-  max-width: 330px;
-  margin: 0;
-  color: rgba(233,240,244,.68);
-  font-size: .85rem;
-  line-height: 1.6;
+.chart-card small {
+  margin-top: 3px;
+  font-size: .55rem;
+  line-height: 1.3;
 }
 
-
-/* Bottom CTA */
-
-.overview-cta {
-  margin-top: 80px;
-  padding: 25px 28px;
-  border: 1px solid rgba(180,205,225,.18);
-  border-radius: 12px;
-  background: rgba(255,255,255,.035);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.overview-cta h3 {
-  margin: 0 0 7px;
-  color: #ffffff;
+.chart-card b {
   font-size: 1rem;
 }
 
-.overview-cta p {
+
+/* Último milestone ocupa a largura inteira */
+.chart-card:last-child {
+  grid-column: 1 / -1;
+  max-width: 100%;
   margin: 0;
-  color: rgba(233,240,244,.62);
-  font-size: .8rem;
 }
 
-.overview-cta a {
-  flex: 0 0 auto;
-  color: #8fb9d8;
-  font-family: "Gadugi", sans-serif;
-  font-size: .75rem;
-  font-weight: 700;
+
+/* Mantém o gráfico visível no mobile */
+.value-chart svg {
+  display: block;
+
+  position: absolute;
+  top: 330px;
+  right: 10px;
+  left: 10px;
+
+  width: calc(100% - 20px);
+  height: 270px;
 }
 
 
 /* Disclaimer */
-
-.overview-disclaimer {
-  max-width: 100%;
-  margin: 24px 0 0;
-  color: rgba(233,240,244,.42);
-  font-size: .58rem;
-  line-height: 1.5;
+.illustration-disclaimer {
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 13px;
+  font-size: .68rem;
+  line-height: 1.45;
 }
-
-
-/* Responsive */
-
-@media (max-width: 800px) {
-
-  .investment-overview {
-    padding: 80px 0 65px;
-  }
-
-  .overview-highlights {
-    grid-template-columns: repeat(2, 1fr);
-    border-radius: 12px;
-  }
-
-  .overview-highlight:nth-child(2) {
-    border-right: none;
-  }
-
-  .overview-highlight:nth-child(3),
-  .overview-highlight:nth-child(4) {
-    border-top: 1px solid rgba(180,205,225,.18);
-  }
-
-  .overview-highlight:nth-child(4) {
-    border-right: none;
-  }
-
-  .positioning-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .overview-cta {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-}
-
-@media (max-width: 520px) {
-
-  .overview-highlights {
-    grid-template-columns: 1fr;
-  }
-
-  .overview-highlight,
-  .overview-highlight:nth-child(2),
-  .overview-highlight:nth-child(3) {
-    border-right: none;
-    border-top: 1px solid rgba(180,205,225,.18);
-  }
-
-  .overview-highlight:first-child {
-    border-top: none;
-  }
 
 }
   </style>
@@ -1334,143 +1513,284 @@
 <section class="investment-overview" id="overview">
   <div class="container">
 
-    <div class="overview-header">
-      <span class="eyebrow">THE OFFERING</span>
-      <h2>Private Preferred Equity Opportunity</h2>
+    <div class="value-illustration-header">
+      <h2>$100,000 INVESTOR VALUE ILLUSTRATION</h2>
 
       <p>
-        Our current private capital raise is structured as preferred equity
-        for qualified financial investors, combining a tiered annual preferred
-        return with warrant participation based on subscription size.
+        Preferred equity + 100% warrant coverage
+        <span>|</span>
+        Assumed $8 opening/strike price
+        <span>|</span>
+        Illustrative 7x share-price case by month 24
       </p>
     </div>
 
-    <div class="overview-highlights">
 
-      <div class="overview-highlight">
-        <strong>US$100K</strong>
-        <span>MINIMUM SUBSCRIPTION</span>
+    <!-- TOP VALUE CARDS -->
+    <div class="value-cards">
+
+      <div class="value-card">
+        <div class="value-card-title">Initial Subscription</div>
+
+        <div class="value-card-content">
+          <div class="value-icon">$</div>
+          <strong>$100,000</strong>
+        </div>
       </div>
 
-      <div class="overview-highlight">
-        <strong>12% - 16%</strong>
-        <span>ANNUAL PREFERRED RETURN*</span>
+
+      <div class="value-card">
+        <div class="value-card-title">Warrant Shares*</div>
+
+        <div class="value-card-content">
+          <div class="value-icon">▤</div>
+          <strong>12,500</strong>
+        </div>
       </div>
 
-      <div class="overview-highlight">
-        <strong>100% - 150%</strong>
-        <span>WARRANT COVERAGE*</span>
+
+      <div class="value-card">
+        <div class="value-card-title">24M Base Value</div>
+
+        <div class="value-card-content">
+          <div class="value-icon">↗</div>
+          <strong>$724,000</strong>
+        </div>
       </div>
 
-      <div class="overview-highlight">
-        <strong>PREFERRED</strong>
-        <span>EQUITY</span>
+
+      <div class="value-card">
+        <div class="value-card-title">24M Base MOIC</div>
+
+        <div class="value-card-content">
+          <div class="value-icon">◎</div>
+          <strong>7.24x</strong>
+        </div>
       </div>
 
     </div>
 
 
+    <p class="warrant-note">
+      *Based on assumed 100% warrant coverage at an $8 strike/opening price.
+    </p>
+
+
+    <!-- VALUE OVER TIME -->
+    <div class="economic-value">
+
+      <div class="economic-title">
+          TOTAL PROJECTED VALUE OVER TIME
+      </div>
+
+      <div class="value-chart">
+
+        <svg
+          viewBox="0 0 1000 260"
+          preserveAspectRatio="none"
+          role="img"
+          aria-label="Illustrative total economic value over time"
+        >
+
+          <defs>
+            <linearGradient id="valueArea" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-opacity=".35"></stop>
+              <stop offset="100%" stop-opacity="0"></stop>
+            </linearGradient>
+          </defs>
+
+          <polygon
+            class="chart-area"
+            points="
+              90,220
+              280,210
+              470,185
+              650,125
+              900,35
+              900,220
+              90,220
+            "
+          ></polygon>
+
+          <polyline
+            class="chart-line"
+            points="
+              90,220
+              280,210
+              470,185
+              650,125
+              900,35
+            "
+          ></polyline>
+
+          <circle cx="90" cy="220" r="8" class="chart-point"></circle>
+          <circle cx="280" cy="210" r="8" class="chart-point"></circle>
+          <circle cx="470" cy="185" r="8" class="chart-point"></circle>
+          <circle cx="650" cy="125" r="8" class="chart-point"></circle>
+          <circle cx="900" cy="35" r="8" class="chart-point"></circle>
+
+        </svg>
+
+
+        <div class="chart-milestones">
+
+          <div class="chart-card">
+            <strong>Investment Date</strong>
+            <span>Month 0</span>
+            <small>Total Economic Value</small>
+            <b>$100,000</b>
+            <small>MOIC</small>
+            <b>1.00x</b>
+          </div>
+
+
+          <div class="chart-card">
+            <strong>Illustrative Opening</strong>
+            <span>Month 8</span>
+            <small>Total Economic Value</small>
+            <b>$108,000</b>
+            <small>MOIC</small>
+            <b>1.08x</b>
+          </div>
+
+
+          <div class="chart-card">
+            <strong>12 Months</strong>
+            <span>Month 12</span>
+            <small>Total Economic Value</small>
+            <b>$212,000</b>
+            <small>MOIC</small>
+            <b>2.12x</b>
+          </div>
+
+
+          <div class="chart-card">
+            <strong>18 Months</strong>
+            <span>Month 18</span>
+            <small>Total Economic Value</small>
+            <b>$418,000</b>
+            <small>MOIC</small>
+            <b>4.18x</b>
+          </div>
+
+
+          <div class="chart-card">
+            <strong>24 Months – Base</strong>
+            <span>Month 24</span>
+            <small>Total Economic Value</small>
+            <b>$724,000</b>
+            <small>MOIC</small>
+            <b>7.24x</b>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- INVESTMENT TABLE -->
     <div class="investment-table-wrap">
+
       <table class="investment-table">
 
         <thead>
           <tr>
-            <th>INVESTMENT SIZE</th>
-            <th>ANNUAL PREFERRED RETURN</th>
-            <th>WARRANT COVERAGE</th>
-            <th>SECURITY</th>
+            <th>Milestone</th>
+            <th>Month</th>
+            <th>Share Price<br>Multiple</th>
+            <th>Illustrative Share<br>Price ($)</th>
+            <th>Accrued Preferred<br>Return ($)</th>
+            <th>Preferred Position<br>Value ($)</th>
+            <th>Warrant Intrinsic<br>Value ($)</th>
+            <th>Total Economic<br>Value ($)</th>
+            <th>MOIC (x)</th>
           </tr>
         </thead>
 
         <tbody>
+
           <tr>
-            <td>US$100,000 - US$499,999</td>
-            <td>12%</td>
-            <td>100%</td>
-            <td>Preferred Equity</td>
+            <td>Investment Date</td>
+            <td>0</td>
+            <td>1.0x</td>
+            <td>$8</td>
+            <td>–</td>
+            <td>$100,000</td>
+            <td>–</td>
+            <td>$100,000</td>
+            <td>1.00x</td>
           </tr>
 
           <tr>
-            <td>US$500,000 - US$1,000,000</td>
-            <td>14%</td>
-            <td>125%</td>
-            <td>Preferred Equity</td>
+            <td>Illustrative Opening</td>
+            <td>8</td>
+            <td>1.0x</td>
+            <td>$8</td>
+            <td>$8,000</td>
+            <td>$108,000</td>
+            <td>–</td>
+            <td>$108,000</td>
+            <td>1.08x</td>
           </tr>
 
           <tr>
-            <td>Above US$1,000,000</td>
-            <td>16%</td>
-            <td>150%</td>
-            <td>Preferred Equity</td>
+            <td>12 Months</td>
+            <td>12</td>
+            <td>2.0x</td>
+            <td>$16</td>
+            <td>$12,000</td>
+            <td>$112,000</td>
+            <td>$100,000</td>
+            <td>$212,000</td>
+            <td>2.12x</td>
           </tr>
+
+          <tr>
+            <td>18 Months</td>
+            <td>18</td>
+            <td>4.0x</td>
+            <td>$32</td>
+            <td>$18,000</td>
+            <td>$118,000</td>
+            <td>$300,000</td>
+            <td>$418,000</td>
+            <td>4.18x</td>
+          </tr>
+
+          <tr class="base-row">
+            <td>24 Months – Base</td>
+            <td>24</td>
+            <td>7.0x</td>
+            <td>$56</td>
+            <td>$24,000</td>
+            <td>$124,000</td>
+            <td>$600,000</td>
+            <td>$724,000</td>
+            <td>7.24x</td>
+          </tr>
+
         </tbody>
 
       </table>
-    </div>
-
-
-    <div class="investor-positioning">
-
-      <div class="positioning-intro">
-        <span class="eyebrow">INVESTOR POSITIONING</span>
-        <h3>Preferred return + equity upside.</h3>
-      </div>
-
-      <div class="positioning-grid">
-
-        <div class="positioning-item">
-          <strong>PREFERRED SHARES</strong>
-          <p>
-            Investors participate through preferred equity in the offering.
-          </p>
-        </div>
-
-        <div class="positioning-item">
-          <strong>TIERED RETURN</strong>
-          <p>
-            Annual preferred return increases with subscription size.
-          </p>
-        </div>
-
-        <div class="positioning-item">
-          <strong>WARRANT PARTICIPATION</strong>
-          <p>
-            Coverage increases from 100% to 150% based on investment amount.
-          </p>
-        </div>
-
-      </div>
 
     </div>
 
 
-    <div class="overview-cta">
+    <!-- DISCLAIMER -->
+    <div class="illustration-disclaimer">
+
+      <div class="disclaimer-icon">✓</div>
 
       <div>
-        <h3>Interested in reviewing the full opportunity?</h3>
-
-        <p>
-          Investment presentation, financial model and supporting materials
-          are available to qualified investors.
-        </p>
+        <strong>Illustrative only.</strong>
+        Not a forecast, offer, recommendation, or guarantee.
+        <br>
+        Preferred return, warrant coverage, exercise mechanics, liquidity timing,
+        and all investor rights are subject to definitive offering documents.
       </div>
 
-      <a href="#contact">joinstrategicflow.com</a>
-
     </div>
-
-
-    <p class="overview-disclaimer">
-      IMPORTANT: Confidential and for informational purposes only. This
-      document does not constitute an offer to sell or a solicitation to buy
-      securities. Any offering will be made only to qualified investors
-      pursuant to definitive documentation and applicable law. Preferred
-      return, warrant coverage and all related rights are subject to final
-      terms. Forward-looking statements involve risks and uncertainties and
-      are not guarantees of future performance. Prospective investors should
-      conduct their own diligence and consult with qualified legal, tax and
-      financial advisers.
-    </p>
 
   </div>
 </section>
@@ -1571,7 +1891,6 @@
 
     <div class="footer-bottom">
       <span>© <span id="year"></span> Strategic Flow Co. All rights reserved.</span>
-      <span>Crescimento que gera resultado.</span>
     </div>
 
   </div>
