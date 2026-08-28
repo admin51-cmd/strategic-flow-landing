@@ -996,6 +996,273 @@
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
       .reveal { opacity: 1; transform: none; }
     }
+    /* ================================
+   INVESTMENT OVERVIEW
+================================ */
+
+.investment-overview {
+  padding: 110px 0 90px;
+  background: #0f2940;
+  color: #e9f0f4;
+}
+
+.overview-header {
+  max-width: 900px;
+  margin-bottom: 34px;
+}
+
+.overview-header .eyebrow,
+.positioning-intro .eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--gold-soft);
+  font-family: "Gadugi", sans-serif;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.overview-header h2 {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+}
+
+.overview-header p {
+  max-width: 900px;
+  margin: 0;
+  color: rgba(233,240,244,.78);
+  font-size: .95rem;
+  line-height: 1.7;
+}
+
+
+/* Highlights */
+
+.overview-highlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 0;
+  border: 1px solid rgba(180,205,225,.22);
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+}
+
+.overview-highlight {
+  min-height: 105px;
+  padding: 22px 18px;
+  border-right: 1px solid rgba(180,205,225,.18);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.overview-highlight:last-child {
+  border-right: none;
+}
+
+.overview-highlight strong {
+  color: #ffffff;
+  font-size: 1.55rem;
+  line-height: 1.1;
+}
+
+.overview-highlight span {
+  margin-top: 8px;
+  color: rgba(233,240,244,.55);
+  font-family: "Gadugi", sans-serif;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+
+/* Investment table */
+
+.investment-table-wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(180,205,225,.18);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+}
+
+.investment-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.investment-table th {
+  padding: 15px 18px;
+  color: #8fb9d8;
+  background: rgba(255,255,255,.025);
+  font-family: "Gadugi", sans-serif;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-align: left;
+}
+
+.investment-table td {
+  padding: 20px 18px;
+  border-top: 1px solid rgba(180,205,225,.15);
+  color: #dfe8ee;
+  font-size: .9rem;
+}
+
+.investment-table td:nth-child(2),
+.investment-table td:nth-child(3) {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.investment-table tr:nth-child(even) {
+  background: rgba(255,255,255,.025);
+}
+
+
+/* Investor positioning */
+
+.investor-positioning {
+  margin-top: 70px;
+}
+
+.positioning-intro h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.positioning-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 32px;
+}
+
+.positioning-item strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #8fb9d8;
+  font-family: "Gadugi", sans-serif;
+  font-size: .68rem;
+  letter-spacing: .08em;
+}
+
+.positioning-item p {
+  max-width: 330px;
+  margin: 0;
+  color: rgba(233,240,244,.68);
+  font-size: .85rem;
+  line-height: 1.6;
+}
+
+
+/* Bottom CTA */
+
+.overview-cta {
+  margin-top: 80px;
+  padding: 25px 28px;
+  border: 1px solid rgba(180,205,225,.18);
+  border-radius: 12px;
+  background: rgba(255,255,255,.035);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.overview-cta h3 {
+  margin: 0 0 7px;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.overview-cta p {
+  margin: 0;
+  color: rgba(233,240,244,.62);
+  font-size: .8rem;
+}
+
+.overview-cta a {
+  flex: 0 0 auto;
+  color: #8fb9d8;
+  font-family: "Gadugi", sans-serif;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+
+/* Disclaimer */
+
+.overview-disclaimer {
+  max-width: 100%;
+  margin: 24px 0 0;
+  color: rgba(233,240,244,.42);
+  font-size: .58rem;
+  line-height: 1.5;
+}
+
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+  .investment-overview {
+    padding: 80px 0 65px;
+  }
+
+  .overview-highlights {
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 12px;
+  }
+
+  .overview-highlight:nth-child(2) {
+    border-right: none;
+  }
+
+  .overview-highlight:nth-child(3),
+  .overview-highlight:nth-child(4) {
+    border-top: 1px solid rgba(180,205,225,.18);
+  }
+
+  .overview-highlight:nth-child(4) {
+    border-right: none;
+  }
+
+  .positioning-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .overview-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+@media (max-width: 520px) {
+
+  .overview-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-highlight,
+  .overview-highlight:nth-child(2),
+  .overview-highlight:nth-child(3) {
+    border-right: none;
+    border-top: 1px solid rgba(180,205,225,.18);
+  }
+
+  .overview-highlight:first-child {
+    border-top: none;
+  }
+
+}
   </style>
 
   <script type="application/ld+json">
@@ -1064,6 +1331,149 @@
       </div>
     </section>
 
+<section class="investment-overview" id="overview">
+  <div class="container">
+
+    <div class="overview-header">
+      <span class="eyebrow">THE OFFERING</span>
+      <h2>Private Preferred Equity Opportunity</h2>
+
+      <p>
+        Our current private capital raise is structured as preferred equity
+        for qualified financial investors, combining a tiered annual preferred
+        return with warrant participation based on subscription size.
+      </p>
+    </div>
+
+    <div class="overview-highlights">
+
+      <div class="overview-highlight">
+        <strong>US$100K</strong>
+        <span>MINIMUM SUBSCRIPTION</span>
+      </div>
+
+      <div class="overview-highlight">
+        <strong>12% - 16%</strong>
+        <span>ANNUAL PREFERRED RETURN*</span>
+      </div>
+
+      <div class="overview-highlight">
+        <strong>100% - 150%</strong>
+        <span>WARRANT COVERAGE*</span>
+      </div>
+
+      <div class="overview-highlight">
+        <strong>PREFERRED</strong>
+        <span>EQUITY</span>
+      </div>
+
+    </div>
+
+
+    <div class="investment-table-wrap">
+      <table class="investment-table">
+
+        <thead>
+          <tr>
+            <th>INVESTMENT SIZE</th>
+            <th>ANNUAL PREFERRED RETURN</th>
+            <th>WARRANT COVERAGE</th>
+            <th>SECURITY</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>US$100,000 - US$499,999</td>
+            <td>12%</td>
+            <td>100%</td>
+            <td>Preferred Equity</td>
+          </tr>
+
+          <tr>
+            <td>US$500,000 - US$1,000,000</td>
+            <td>14%</td>
+            <td>125%</td>
+            <td>Preferred Equity</td>
+          </tr>
+
+          <tr>
+            <td>Above US$1,000,000</td>
+            <td>16%</td>
+            <td>150%</td>
+            <td>Preferred Equity</td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+
+    <div class="investor-positioning">
+
+      <div class="positioning-intro">
+        <span class="eyebrow">INVESTOR POSITIONING</span>
+        <h3>Preferred return + equity upside.</h3>
+      </div>
+
+      <div class="positioning-grid">
+
+        <div class="positioning-item">
+          <strong>PREFERRED SHARES</strong>
+          <p>
+            Investors participate through preferred equity in the offering.
+          </p>
+        </div>
+
+        <div class="positioning-item">
+          <strong>TIERED RETURN</strong>
+          <p>
+            Annual preferred return increases with subscription size.
+          </p>
+        </div>
+
+        <div class="positioning-item">
+          <strong>WARRANT PARTICIPATION</strong>
+          <p>
+            Coverage increases from 100% to 150% based on investment amount.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="overview-cta">
+
+      <div>
+        <h3>Interested in reviewing the full opportunity?</h3>
+
+        <p>
+          Investment presentation, financial model and supporting materials
+          are available to qualified investors.
+        </p>
+      </div>
+
+      <a href="#contact">joinstrategicflow.com</a>
+
+    </div>
+
+
+    <p class="overview-disclaimer">
+      IMPORTANT: Confidential and for informational purposes only. This
+      document does not constitute an offer to sell or a solicitation to buy
+      securities. Any offering will be made only to qualified investors
+      pursuant to definitive documentation and applicable law. Preferred
+      return, warrant coverage and all related rights are subject to final
+      terms. Forward-looking statements involve risks and uncertainties and
+      are not guarantees of future performance. Prospective investors should
+      conduct their own diligence and consult with qualified legal, tax and
+      financial advisers.
+    </p>
+
+  </div>
+</section>
 
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <div class="container contact-grid">
